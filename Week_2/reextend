@@ -1,0 +1,16 @@
+#!/bin/bash
+#Author: Nischaal Cooray
+#Date: 4/11/15
+#Description: Replaces with last found occurrence of a specified string withanother string
+
+if [ $# -ne 2 ]; then
+	echo "Please enter two parameters."
+	exit 1
+fi
+
+for i in *$1; do
+  mv "$i" "${i/%$1/$2}" 
+	if [ $? -ne 0 ]; then
+	  echo "Operation failed for file $i." 
+	fi
+done

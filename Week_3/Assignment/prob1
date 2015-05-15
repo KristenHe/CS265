@@ -1,0 +1,15 @@
+#!/bin/bash
+#Author: Nischaal Cooray
+#Date: 4/18/2015
+#Description: Determines number of directories in the specified ARCHIVE and the total number of messages sent. 
+
+#ARCHIVE="/home/nc475/CS265/Week_3/Assignment/TestFiles/*" #Path used for testing
+
+for d in $ARCHIVE/*; do
+  directories=$((directories+1))
+	for f in $d/*; do
+		messages=$((messages+1))
+	done 
+done
+
+printf "%d\t%d\n" $directories $messages #Output is formatted to include a space between the two values.

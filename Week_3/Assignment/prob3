@@ -1,0 +1,18 @@
+#!/bin/bash
+#Author: Nischaal Cooray
+#Date: 4/18/15
+#Description: Returns a list of messages sent on a specified date. 
+
+#ARCHIVE="/home/nc475/CS265/Week_3/Assignment/TestFiles/*" #Path used for testing
+
+if [ $# -eq 0 ]; then
+	echo "Please provide three arguments in the format YYYY MM DD"
+fi
+
+date="$2/$3/$1" #Reformat the specified date into the format used by the messages
+
+array=$(grep -rl "^TimeStamp: $date" $ARCHIVE)
+for item in $array; do
+	val=${item##*/} #Trim to show only the name of the message, not the entire ilename
+	echo $val
+done

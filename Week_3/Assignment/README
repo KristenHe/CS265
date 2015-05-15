@@ -1,0 +1,12 @@
+All these scripts work on the basis that the ARCHIVE variable is 
+/home/kschmidt/public_html/CS265/Assignments/DrMath/Archive
+
+Each script is capable of carrying out a specific task:
+prob1 - Detemine the number of directories containing messages and the total number of messages sent.
+prob2 - Detemine the longest thread from all the threads and find any other threads of the same length.
+prob3 - Given a set of three arguments that specify a date (in the order yyyy mm dd), this script will find all messages sent on that day.
+prob4 - Find all distinct hostnames (case-insensitive) and the number of messages sent to each. Also calculates the total number of distict hostnames.
+
+For prob2 I assumed that the thread length that is appended to the end of the file name would provide an accurate representation of how many messages were in the thread.
+
+There is nothing extra required to run these scripts.

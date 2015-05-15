@@ -1,0 +1,27 @@
+#!/bin/bash
+D=/home/jah473/public_html/cs265
+if [ -e find.c ]
+then
+	touch total.c
+	cp "$D"/aux_files/rest.c .
+	cp "$D"/aux_files/hash.h .
+	cat rest.c >> total.c
+	cat find.c >> total.c
+	rm rest.c
+	gcc -o find hash.h total.c
+	rm total.c
+	rm hash.h
+	if [ -e hash.o ]
+	then
+		rm hash.o
+	fi
+	chmod 777 find
+	printf "\n"
+	echo "The hash is { \"Jaga\": 24, \"Jesse\": 78, \"Cos\": 86, \"Kate\": 28, \"Nash\": 11, \"Vera\": 99, \"Bob\": 38 }"
+	printf "\n"
+	sleep 2
+	"$D"/tester_alt ./find "$D"/lab5_tests/* -z "find function"
+	rm find
+else
+	echo find.c not found
+fi

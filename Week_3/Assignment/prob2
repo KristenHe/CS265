@@ -1,0 +1,23 @@
+#!/bin/bash
+#Author: Nischaal Cooray
+#Date: 4/18/15
+#Description: Determines which thread has the longest length and finds other threads with the same length.
+
+#ARCHIVE="/home/nc475/CS265/Week_3/Assignment/TestFiles/*" #Path used for testing
+
+for d in $ARCHIVE/*; do
+	for f in $d/*; do
+	  fullFile=${f##*/} #Get the full filename of a message
+		IFS='_' read -r fileName threadLength <<< "$fullFile" #Split the filename into message name and the length of the thread
+		printf "%s\t%s\n" $fileName $threadLength >> temp #Format output to include a space between the two values
+	done	
+done
+
+sort -k2 -nru temp -o temp #Sort the file storing the list of messsage names and thread lengths
+
+longestThread=$(awk 'NR==1{print $2}' temp) #Determine the longest thread by getting the thread length of the first record.
+echo $longestThread
+
+awk -v var="$longestThread" '$2==var {print $1}' temp #Display all other threads that have the same length
+
+rm -rf temp #Delete temp file

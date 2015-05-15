@@ -1,0 +1,13 @@
+#!/bin/bash
+#Author: Nischaal Cooray
+#Date: 4/12/2015
+#Description: Parses an unformatted song name, splitting it up into Artist name and song title. Then moves and renames the song into a directory for the Artist
+
+for i in *.mp3; do
+	#Extract relevant names for Artist and Song and remove any leading and trailing whitespace
+	artistName="$(echo -e "${i}" | cut -d'-' -f 1 | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+	songName="$(echo -e "${i}" | cut -d'-' -f 2 | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+
+	mkdir -p "$artistName" #Create the directory only if it does not already exist
+  mv "$i" "$artistName//$songName" #Move the files into the directory
+done

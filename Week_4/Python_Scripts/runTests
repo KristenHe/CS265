@@ -1,0 +1,30 @@
+#!/bin/bash
+D=/home/jah473/public_html/cs265
+if [ $# -ne 0 ]
+then
+	scripts=( "$@" )
+else
+	scripts=( s1 s2 id id2 parsePhoneNrs )	
+fi
+printf "\n"
+echo Testing the following scripts for CS265 lab 4:
+for arg in "${scripts[@]}"
+do
+	echo "$arg".py
+done
+sleep 2
+for arg in "${scripts[@]}"
+do
+	printf "\n\n\n"
+	echo $arg.py
+	echo ==================
+	sleep 2
+	if [ -e "$arg".py ]
+	then
+		chmod u+x "$arg".py
+		"$D"/tester ./"$arg".py "$D"/lab4_tests/"$arg"/* -z "$arg".py
+	else
+		echo "$arg".py not found
+	fi
+	sleep 3
+done

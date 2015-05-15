@@ -1,0 +1,57 @@
+1) add() - adds a new prefix to the table and updates and updates the prefix 
+	 addSuffix() - adds a new suffix to the hash table
+
+2) lookup() searches for a prefix. If given the value 1 for the argument "create" then a prefix is created. This function returns a pointer to the current prefix or returns NULL if it does not exist.
+	 lookup() is called by generate() and add().
+
+3) Included as table.jpg
+	 a) It's - 3 pointers
+	 b) a - 3 pointers
+	 c) new - 3 pointers
+	 d) dawn - 2 pointers
+
+4) Each string is only allocated the exact amount of memory that it needs.
+
+5) You have to free each pointer when you are done with the data so that the memory can be allocated to other programs.
+
+6)
+
+void cleanup()
+{
+	State *sp = NULL;
+	State *temp = NULL;
+
+	for (int i = 0; i < NHASH; i++)
+	{
+		for (sp = statetab[i]; sp != NULL; sp = temp)
+		{
+			temp = sp->next;
+			free(sp);
+		}
+	}
+}
+
+7) Yes, it works as intended. 
+	 I did not encounter any difficulties.
+
+8) We know that each string has been freed only once because once a prefix/suffix has been freed, the memory that was allocated to it is no longer accessible by the program. If we attempted to free the string again, an error would occur.  
+
+9) The prefixes are stored in a deque, which is also known as a "double ended queue". Storing the prefixes in a deque rather than a vector allows us to pop the first element and also add a new element to the end.
+
+10) A map.
+
+11) As a vector of suffixes.
+
+12) Implementing this in C++ gives us access to numerous built in datatypes from the STL, thereby avoiding having to create our own hash table implementation which had to be done in the C implementation.
+
+13) A drawback of using datatypes from the STL is that there is less control over the implemetation as there could be a lot of redundant code that could mean that performance in C++ would be (slightly) slower than in C.
+
+14) As tuples.
+
+15) A dictionary.
+
+16) In a list.
+
+17) As all variables in Python are inherently objects and writing code in Python is generally less work.
+
+18) C++ has better data structures. 

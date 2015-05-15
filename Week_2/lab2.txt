@@ -1,0 +1,24 @@
+1) It outputs a list of all files found in my home directory and it's subdirectories.
+
+2) find -name *.bash
+
+3) ./CS265/Week_1/hello.bash
+   ./tmp/gotMe.bash
+
+4) Words = 421
+   Lines = 73
+   Characters = 2538
+   
+5) grep the breadIsDangerous.txt | wc -l
+
+6) There is now a backup file of spellExample.
+
+7) The output displays the lines that were changed via the ispell utility and what
+   they were before the changes were made. 
+   
+8) There was no output as there are no differences between the two files.
+
+9) 0 : Everything worked as expected and no errors were encountered while locating
+	   the string.
+   1 : The string could not be found in the specified file(s).
+   2 : The specified file(s) could not be found.

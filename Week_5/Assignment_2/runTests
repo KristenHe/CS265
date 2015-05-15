@@ -1,0 +1,39 @@
+#!/bin/bash
+D=/home/jah473/public_html/cs265
+FP=findParking.py
+PL=philly_loc.py
+FL=fixed_loc.py
+PLACE=paceholder.py
+cp "$D"/aux_files/"$FL" .
+if [ -e $PL ]
+then
+	mv $PL $PLACE
+fi
+
+mv $FL $PL
+printf "\n\n\n"
+echo $FP
+echo ==================
+if [ -e $FP ]
+then
+	echo "***Setting user location to (40.0385802878, -74.9708309423)***"
+	printf "\n"
+	sleep 2
+	chmod u+x $FP
+	"$D"/tester ./"$FP" "$D"/assignment2_tests/* -z $FP
+else
+	echo $FP not found
+fi
+
+rm -f $PL
+if [ -e $PLACE ]
+then
+	mv $PLACE $PL
+fi
+
+if [ -e "$PL"c ]
+then
+	rm -f "$PL"c
+fi
+
+printf "\n"

@@ -1,0 +1,47 @@
+1)	.bash_profile is invoked when bash is invoked as a login shell after reading and executing commands from the file /etc/profile.
+	.bashrc is invoked when bash is not invoked as a login shell. In this case, it will be the first file that will be read and executed from. Using the --norc option, bashrc can be inhibited.
+	
+3) It displays a detailed list of all files in the current directory. 
+
+4) I gave myself read and write permissions, but removed all permissions from my group and any other users.
+
+5) I gave myself read, write and execute permissions and gave my group and other users read and execute permissions.
+
+6) Yes I can.
+
+7) Yes I can.
+
+8) Yes I was successful.
+
+9) By directly giving myself execute permissions or giving my group execute permissions.
+
+10) I got a warning saying that I was attempting to write to a read only file.
+
+11) ls * - Lists all files in the directory
+	ls a* - lists all files beginning with the letter a
+	ls *m* - lists all files where the letter m has other letters around it
+	ls anno? - lists all files starting with 'anno' and having only one other character at the end
+	ls annoy? - attempts to list all files starting with 'annoy' and having another character at the end. There was no such file in the directory.
+
+12) Two files were created; one was named 'a' and the other was named 'space'.
+
+13) a) No such file or directory
+	b) Is a < b?
+	c) $USER is nc475
+	d) $USER is $USER
+	e) Today is Sat Apr 4 14:12:06 EDT 2015
+	f) Today is `date`
+	g) ls: cannot access e*: No such file or directory
+	   Files that start w/e:
+
+14) Adding the option '-n' sorts the text in from lowest to highest number.
+
+15) sort -nr itemList-2cols | head -8
+
+16) lab1.tar.gz was created in its place.
+
+17) It got converted to a .tar file.
+
+18) grep Vacation *
+
+19) find /home/nc475 -name lab1

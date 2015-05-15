@@ -1,0 +1,82 @@
+----- Programming Style -----
+
+1.1) We already know that 0 means false and 1 means true 
+
+1.2)
+int IsSmaller(char *first, char *second) {
+	if (strcmp(first, second) < 1)
+		return 1;
+	else
+		return 0;
+	}
+
+1.3) I read it out loud and it makes no sense.
+
+1.4) 
+	a) if ( c != 'y' || c != 'Y')
+			return;
+	b) if (length > BUFSIZE)
+			length = BUFSIZE;
+	c) flag = !flag;
+
+	d) 	quote = 0;
+			if (strcmp(*line, '"') == 0)
+				qoute = 1;
+
+	e) bit = (val & 1) ? 1 : 0;
+
+1.5) The order in which the read methods are called is unknown to us. Furthermore, the purpose of the code is unclear, due to the unclear naming throughout the program.
+
+1.6) 2 3 
+
+1.7) 
+a) if (!stty(stdin) && !istty(stdout) && !istty(stderr))
+	return 0;
+
+b) return retval 
+
+c) 	for (k=0; k<4; k++) {
+			scanf("%lf", &dx);
+			x += dx;
+		}
+
+1.8) 
+for (int count=0; count<total; count++) {
+	if (this.getName(count) == nametable.userName()) {
+		return (true);
+	}
+}
+			
+1.9) 
+There are no parentheses around the variable 'c'.
+Since 'c' occurs multiple times throughout the macro, the macro will be executed multiple times.
+
+1.10) 
+#define METER_PER_FEET 0.3048
+#define FEET_PER_METER 3.2084
+#define FEET_PER_MILE 5280.0
+#define KILOMETER_PER_MILE 1.609344
+#define SQUARE_KM_PER_SQUARE_MILE 2.589988
+
+1.11) 
+The 1st comment states that a void functio returns a value. This is incorrect as a void function does not return any value.
+
+The 2nd comment explains what the % operator is used for but does not mention the 'MAX' variable.
+
+The 3rd comment states that a message is being printed out, but does not explain what the message would be about. 
+
+The 4th comment is a duplicate of the 5th as they both detail the same thing. 
+
+The 6th comment is a duplicate of the 5th. 
+
+----- Python Scripts -----
+
+1) Submitted as s1.py
+
+2) Submitted as s2.py
+
+3) Submitted as id.py
+
+4) Submitted as id2.py
+
+5) Submitted as parsePhoneNrs.py
