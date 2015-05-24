@@ -1,0 +1,49 @@
+<project>
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+		
+		<target name="compile">
+				<mkdir dir="build/classes"/>
+  	    <javac includeantruntime="false" srcdir="." destdir="build/classes"/>
+    </target>
+	
+		<target name="jar">
+				<mkdir dir="build/jar"/>
+				<jar destfile="build/jar/KnightTour.jar" basedir="build/classes">
+						<manifest>
+								<attribute name="Main-Class" value="KnightTour"/>
+						</manifest>
+				</jar>
+		</target>
+
+		<target name="KnightTour">
+				<java jar="build/jar/KnightTour.jar" fork="true">
+				</java>
+		</target>
+
+		<target name="run" depends="jar">
+				<java classname="KnightTour" classpath="${lib-dir}/KnightTour.jar" fork="true">
+						<arg value="${rows}"/>
+						<arg value="${cols}"/>
+						<arg value="${attempts}"/>
+				</java>
+		</target>
+
+		<target name="view">
+				<concat destfile="java.concat">
+						<fileset dir="." includes="*.java" />
+				</concat>
+				<exec executable="less">
+						<arg value="java.concat"/>
+				</exec>
+		</target>
+
+		<target name="doc">
+				<javadoc destdir="docs/" >
+						<fileset dir="."/>
+				</javadoc>
+		</target>
+
+</project>
