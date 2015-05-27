@@ -1,0 +1,15 @@
+1)
+	i) Implementation of a program must be hidden from the user so that they can be changed without affecting users.
+	ii) Provide a set of non-overlapping functions and capabilities that do one thing well.
+	iii) An interface must do only what it is supposed to do and not do anything that the user does not know about.
+	iv) Programmers should implement similar interfaces/programs in a consistent way.
+
+2) Empty fields, commas within quotes and escaped quotes are not properly handled.
+
+3)	Commas within quotes are handled better, quotes within quotes are handled better.
+
+4)	Empty fields are still not handled properly. You cannot parse two files at the same time as the file names have to be "redirected" to the program through stdin.
+
+5)	No the C++ implementation does not solve these issues. The issue of empty fields not being handled properly is still visible.
+
+6) Yes it does.
