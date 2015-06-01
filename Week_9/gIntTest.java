@@ -1,3 +1,10 @@
+/*
+Author: Nischaal Cooray
+Date: 5/31/2015
+jUnit version: 4.0
+Description: A collection of tests to ensure that the methods in gInt.java are completely functional
+*/
+
 import junit.framework.*;
 
 public class gIntTest extends TestCase {
@@ -29,7 +36,7 @@ public class gIntTest extends TestCase {
         gInt sum = sum1.add(sum2);
         assertNotNull(sum);
         assertEquals(sum.real(), checkAdd.real());
-				assertEquals(sum.imag(), checkAdd.imag());
+	    assertEquals(sum.imag(), checkAdd.imag());
     }
 
     public void testMultiply() {
@@ -39,11 +46,11 @@ public class gIntTest extends TestCase {
         gInt prod = prod1.multiply(prod2);
         assertNotNull(prod);
         assertEquals(prod.real(), checkMult.real());
-				assertEquals(prod.imag(), checkMult.imag());
+		assertEquals(prod.imag(), checkMult.imag());
     }
 
     public void testNorm() {
-				float checkNormal = (float)Math.sqrt(85);
+		float checkNormal = (float)Math.sqrt(85);
         assertNotNull(checkNormal);
 
         float normalN = normN.norm();
